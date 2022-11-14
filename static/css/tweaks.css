@@ -1,3 +1,11 @@
+body {
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(110, 110, 110));
+}
+
+.bg-orange {
+    background: linear-gradient(180deg, #a7bfe8, #6190e8);
+}
+
 .card-img-top {
     width: 100%;
     height: 20em;
@@ -6,7 +14,7 @@
 
 .card-text:hover {
     font-size: large;
-    color: #000;;
+    color: #000;
 }
 a {
     text-decoration: none;

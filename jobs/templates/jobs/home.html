@@ -9,6 +9,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
     <title>Ernel F. Tortogo v.0</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'web_logo.png' %}">
 
     <!-- CSS only -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -33,20 +34,31 @@
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
+  <div class="album py-5 bg-white">
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for job in jobs.all %}
         <div class="col">
             <a href="{% url 'detail' job.id %}">
-            <div class="card shadow-sm">
-                <img class="card-img-top bg-dark" src="{{ job.image.url }}" width="100%" height="300"  fill="#000"></img>
-                <div class="card-body">
+            <div class="card shadow-sm bg-grad-gray">
+              <img class="card-img-top bg-transparent" src="{{ job.image.url }}" alt="Card image cap" width="100%" height="300">
+              <div class="card-body bg-white">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">{{ job.summary }}</p>
+                <br>
+                <a href="{% url 'detail' job.id %}" class="btn btn-primary">Details...</a>
+              </div>
+            </div>
+            </a>
+            <!-- <a href="{% url 'detail' job.id %}">
+            <div class="card shadow-sm bg-grad-gray">
+                <img class="card-img-top bg-transparent" src="{{ job.image.url }}" width="100%" height="300"></img>
+                <div class="card-body bg-blue">
                     <p class="card-text">{{ job.summary }}</p>
                 </div>
             </div>
-            </a>
+            </a> -->
         </div>
 
         {% endfor %}
@@ -62,8 +74,10 @@
     <p class="float-end mb-1">
       <a href="#" class="btn btn-primary my-2">Back to top</a>
     </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.2/getting-started/introduction/">getting started guide</a>.</p>
+    <br>
+    <br>
+    <!-- <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.2/getting-started/introduction/">getting started guide</a>.</p> -->
   </div>
 </footer>
 
